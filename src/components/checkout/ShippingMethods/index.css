@@ -1,0 +1,58 @@
+.ShippingMethodsContainer {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  
+  grid-area: content-section;
+  -ms-grid-area: content-section;
+  padding: 0em 1em 1em 1em;
+  margin: 1em 0em 0.8em 0em;
+}
+.ShippingMethod {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+
+  margin: 1em 0em 0.8em 0em;
+}
+.ShippingMethodRate {
+  margin-top: 0.7em;
+}
+.ShippingMethodDetailsContainer {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  
+  display: inline-block;
+  text-align: center;
+  padding: 0.8em 0.6em;
+}
+.ShippingMethodRadioButton {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  
+  display: block;
+  text-align: center;
+  padding: 1.2em 0em 0.7em 0em;
+}
+.ShippingMethodRadioButton > input {
+  margin: auto;
+  display: block;
+}
+.SubmitShippingMethodButton {
+  margin-top: 1em;
+}
+
+/* 620px/16px = 38.75em */
+@media only screen and (min-width: 38.75em) {
+
+  .ShippingMethodDetailsContainer {
+    text-align: left;
+    padding: 0.8em 0.7em;
+  }
+  .ShippingMethodRadioButton {
+  	display: inline-block;
+  	padding: 1em 1.1em;
+  }
+}

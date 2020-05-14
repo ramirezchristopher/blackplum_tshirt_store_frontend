@@ -1,0 +1,32 @@
+.OrderTrackingContainer {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  grid-area: content;
+}
+.OrderTrackingContainer form {
+  margin: 2em 0em;
+}
+.OrderTrackingContainer input {
+  background-color: #ffffff;
+  height: 100%;
+  outline: none;
+}
+.OrderTrackingContainer input:focus { 
+  background-color: #d7dce5;
+}
+.OrderTrackingContainer .InputField {
+  width: 18em;
+  display: inline-block;
+  margin: 0em 1em 1em 0em;
+}
+.OrderTrackingContainer .MediumButton {
+  margin: 0em 0em 1em 0em;
+}
+.LookupOrderButtonContainer {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  display: inline-block;
+  vertical-align: bottom;
+}

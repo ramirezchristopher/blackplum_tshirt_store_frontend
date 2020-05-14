@@ -1,0 +1,30 @@
+{
+  "short_name": "Black Plum",
+  "name": "Black Plum Apparel",
+  "icons": [
+    {
+      "src": "/img/black-plum-192.ico",
+      "sizes": "192x192",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "/img/black-plum-512.ico",
+      "sizes": "512x512",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "/img/black-plum-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/img/black-plum-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "start_url": ".",
+  "display": "fullscreen",
+  "theme_color": "#d7dce5",
+  "background_color": "#ffffff"
+}

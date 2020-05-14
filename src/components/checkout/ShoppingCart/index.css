@@ -1,0 +1,105 @@
+
+.ShoppingCart {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+
+  grid-column-start: navigation;
+  -ms-grid-column: navigation;
+  grid-column-end: content;
+  width: 100%;
+  
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: auto;
+  grid-column-gap: 0.8em;
+  grid-template-areas: 
+    "breadcrumbs-section"
+    "title-section"
+    "content-section"
+    "totals-section";
+
+  -ms-grid-columns: auto;
+  -ms-grid-rows: auto;
+  -ms-grid-column-gap: 0.8em;
+  -ms-grid-template-areas: 
+    "breadcrumbs-section"
+    "title-section"
+    "content-section"
+    "totals-section";
+    
+  padding: 1em 0.5em 2em 0.5em;
+}
+
+.ShoppingCartTitle {
+  grid-area: title-section;
+  -ms-grid-area: title-section;
+  font-family: 'Exo 2', sans-serif;
+  font-size: 1.5em;
+  padding: 0em;
+  margin: 0.6em 0em 0.3em 0.6em;
+  vertical-align: bottom;
+}
+.CheckoutFormSectionHeading {
+  font-size: 1rem;
+  margin-top: 1.5rem;
+}
+
+.InvoiceItemContainer {
+  grid-area: content-section;
+  margin-top: 1em;
+}
+
+.EmptyShoppingCartContainer {
+  grid-area: content-section;
+  -ms-grid-area: content-section;
+  padding-left: 0.5em;
+}
+.ContinueShoppingButtonContainer {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  font-size: 0.9em;
+  vertical-align: middle;
+  margin-bottom: 1em;
+}
+.ContinueShoppingButtonContainer a {
+  color: #000000;
+}
+.LeftArrow {
+  height: 1em;
+  margin-right: 0.2em;
+  position: relative;
+  top: 0.2em;
+}
+
+/* 800px/16px = 50em */
+@media only screen and (min-width: 50em) {
+  .ShoppingCart {
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: auto;
+    grid-template-areas: 
+      "breadcrumbs-section  breadcrumbs-section"
+      "title-section        title-section"
+      "content-section      totals-section";
+      
+    -ms-grid-columns: 2fr 1fr;
+    -ms-grid-rows: auto;
+    -ms-grid-template-areas: 
+      "breadcrumbs-section  breadcrumbs-section"
+      "title-section        title-section"
+      "content-section      totals-section";
+  }
+  .InvoiceItemContainer {
+    margin: 1em 0em;
+  }
+}
+
+/* 1300px/16px = 81.25em */
+@media only screen and (min-width: 81.25em) {
+  .ShoppingCart {
+    border-left: 1px solid #d1d3d6;
+    border-right: 1px solid #d1d3d6;
+  }
+}
+

@@ -1,0 +1,25 @@
+.TermsConditionsContainer {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  grid-area: content;
+}
+
+.TermsConditionsContainer h2 {
+  font-size: 1em;
+  margin: 1.8em 0.3em 0.7em 0em;
+}
+
+.TermsConditionsContainer h2:first-child {
+  margin-top: 0;
+}
+
+.TermsConditionsContainer ul {
+  list-style-type: disc;
+  margin-bottom: 0em;
+  padding-bottom: 0em;
+}
+.TermsConditionsContainer li {
+  margin: none;
+  padding-bottom: 0.8em;
+}

@@ -1,0 +1,71 @@
+.CompanyInfoContainer {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+
+  grid-column-start: navigation;
+  grid-column-end: content;
+  width: 100%;
+  
+  display: inline-grid;
+  grid-template-columns: auto;
+  grid-template-rows: auto auto auto 1fr auto;
+  grid-template-areas: 
+    "navigation"
+    "banner"
+    "content";
+}
+.CompanyInfoContainer h1 {
+  padding-left: 0;
+}
+.CompanyInfoContent {
+  min-height: 20em;
+  padding: 1em 1em 2.3em 1em;
+}
+
+.Question {
+  font-weight: bold;
+  padding: 1.5em 0em 0.7em 0em;
+}
+.Answer {
+  padding-left: 1em;
+}
+.Answer ul {
+  list-style-type: disc;
+  margin-bottom: 0em;
+  padding-bottom: 0em;
+}
+.Answer li {
+  margin: none;
+  padding-bottom: 0.8em;
+}
+.StoreName {
+  font-weight: bold;
+  color: #555568;
+}
+.ContactEmail {
+  font-weight: bold;
+  color: #2a64c1;
+}
+.ContactEmail:visited {
+  color: #2a64c1;
+}
+
+
+/* 672px/16px = 42em */
+@media only screen and (min-width: 42em) {
+  .CompanyInfoContainer {
+    grid-template-columns: 12em 1fr;
+    grid-template-rows: auto;
+    grid-template-areas: 
+      "navigation  banner"
+      "navigation  content";
+  }
+}
+
+/* 1300px/16px = 81.25em */
+@media only screen and (min-width: 81.25em) {
+  .CompanyInfoContent {
+    border-right: 1px solid #d1d3d6;
+  }
+}

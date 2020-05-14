@@ -1,0 +1,119 @@
+.SiteHeader {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  
+  grid-area: header;
+  -ms-grid-area: header;
+  position: relative;
+  top: 0px;
+  border-bottom: 1px solid #d1d3d6;
+  background-color: #ffffff;
+  z-index: 100;
+
+  display: inline-grid;
+  grid-template-columns: 1fr auto auto;
+  grid-template-rows: auto;
+  grid-template-areas: 
+    "logo       cart       hamburger"
+    "searchbar  searchbar  searchbar";
+  align-content: center;
+  justify-content: center;
+  
+  -ms-grid-columns: 1fr auto auto;
+  -ms-grid-rows: auto;
+  -ms-grid-template-areas: 
+    "logo       cart       hamburger"
+    "searchbar  searchbar  searchbar";
+  -ms-align-content: center;
+  -ms-justify-content: center;
+  
+  padding-right: 1em;
+}
+
+.BpaLogo {
+  grid-area: logo;
+  justify-self: start;
+  align-self: center;
+  
+  -ms-grid-area: logo;
+  -ms-grid-row-align: start;
+  -ms-grid-column-align: center;
+  
+  text-decoration: none;
+  color: #000000;
+  cursor: pointer;
+}
+.BpaLogoImage {
+  height: 6em;
+}
+
+.SiteHeader a:visited {
+  text-decoration: none;
+  color: #000000;
+}
+
+.ShoppingCartIconContainer {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  grid-area: cart;
+  justify-self: center;
+  align-self: center;
+  
+  -ms-grid-area: cart;
+  -ms-grid-row-align: center;
+  -ms-grid-column-align: center;
+  
+  cursor: pointer;
+  position: relative;
+  outline-style: none;
+  padding: 0.7em;
+}
+
+.ShoppingCartIcon {
+  height: 2.5em;
+  outline-style: none;
+}
+
+.ShoppingCartCountBadge {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 0.3em 0.5em;
+  border-radius: 100%;
+  display: inline-block;
+  font-size: 1em;
+  background: #33b248;
+  color: #ffffff;
+  font-weight: bold;
+  vertical-align: top;
+  position: absolute;
+  top: 1.7em;
+  left: 2.2em;
+  opacity: 0.8;
+}
+
+/* 672px/16px = 42em */
+@media only screen and (min-width: 42em) {
+  .SiteHeader {
+    position: sticky;
+    grid-template-columns: 16em 1fr 5em 0em;
+    grid-template-areas: 
+      "logo  searchbar  cart  hamburger";
+      
+    -ms-grid-columns: 16em 1fr 5em 0em;
+    -ms-grid-template-areas: 
+      "logo  searchbar  cart  hamburger";
+  }
+}
+
+/* 1300px/16px = 81.25em */
+@media only screen and (min-width: 81.25em) {
+  .SiteHeader {
+    border-left: 1px solid #d1d3d6;
+    border-right: 1px solid #d1d3d6;
+  }
+}
+
+

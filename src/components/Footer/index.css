@@ -1,0 +1,119 @@
+
+.Footer {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  
+  position: relative;
+  grid-area: footer;
+  -ms-grid-area: footer;
+  
+
+  display: inline-grid;
+  grid-template-columns: 2fr 1fr;
+  grid-template-rows: auto 7em;
+  grid-template-areas: 
+    "footer-links       footer-social-media-buttons"
+    "footer-copyright   footer-comodo-seal";
+    
+  -ms-grid-columns: 2fr 1fr;
+  -ms-grid-rows: auto 7em;
+  -ms-grid-template-areas: 
+    "footer-links       footer-social-media-buttons"
+    "footer-copyright   footer-comodo-seal";
+
+  border-top: 1px solid #d1d3d6;
+  background-color: #555568;
+  font-size: 0.8rem;
+}
+.Footer a {
+  text-decoration: none;
+}
+.FooterItemsContainer {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  grid-area: footer-links;
+  -ms-grid-area: footer-links;
+  text-align: left;
+  padding-left: 0.3em;
+}
+
+.FooterItem {
+  margin: 1.3rem 1rem 0.3rem 1rem;
+  cursor: pointer;
+  color: #ffffff;
+}
+
+.FooterItem:hover {
+  color: #f2c565;
+}
+
+.Copyright {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  color: #ffffff;
+  grid-area: footer-copyright;
+  -ms-grid-area: footer-copyright;
+  align-self: end;
+  -ms-grid-column-align: end;
+  font-size: 0.7rem;
+  padding: 1.5rem 1rem 1rem 1rem;
+}
+.CopyrightSymbol {
+  font-size: 0.8rem;
+  margin-right: 0.3rem;
+}
+.Copyright > div {
+  display: inline-block;
+  padding-right: 0.5em;
+}
+.SocialMediaButtons {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+
+  grid-area: footer-social-media-buttons;
+  -ms-grid-area: footer-social-media-buttons;
+  justify-self: end;
+  -ms-grid-row-align: end;
+  align-self: start;
+  -ms-grid-column-align: start;
+  margin: 0.6rem 1rem;
+  white-space: nowrap;
+}
+.SocialMediaButton {
+  height: 2.8em;
+  width: 2.8em;
+  padding: 0.5rem;
+  cursor: pointer;
+}
+
+.ComodoSealContainer {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+
+  grid-area: footer-comodo-seal;
+  -ms-grid-area: footer-comodo-seal;
+  justify-self: end;
+  -ms-grid-row-align: end;
+  align-self: bottom;
+  -ms-grid-column-align: bottom;
+  margin: 0rem 1rem;
+}
+
+/* 620px/16px = 38.75em */
+@media only screen and (min-width: 38.75em) {
+  .FooterItemsContainer {
+    padding: 0;
+  }
+  .FooterItem {
+    display: inline-block;
+  }
+  .Copyright {
+    margin-bottom: 0.5rem;
+  }
+}
+

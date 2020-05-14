@@ -1,0 +1,48 @@
+.MerchandiseCard {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  transition: all 0.5s;
+  width: 100%;
+  padding: 0em;
+  margin: 0.3em 0em;
+  grid-area: merchandise-card-section;
+  -ms-grid-area: merchandise-card-section;
+}
+
+.ProductLink {
+  cursor: pointer;
+  color: #000000;
+  text-decoration: none;
+}
+.MerchandiseCardContainer a:visited {
+  text-decoration: none;
+  color: #000000;
+}
+.MerchandiseCard:hover {
+  background-color: #d7dce5;	
+}
+
+.ProductImageContainer {
+  margin-bottom: 0.2em;
+}
+
+.ProductImage {
+  width: 100%;
+  height: auto;
+}
+.ProductDetailsSection {
+  padding-left: 1.8em;
+  height: 3.8em;
+}
+.MerchandisePrice {
+  color: #0f8912;
+  padding-top: 0.3em;
+}
+
+/* 620px/16px = 38.75em */
+@media only screen and (min-width: 38.75em) {
+  .ProductDetailsSection {
+    height: 3em;
+  }
+}

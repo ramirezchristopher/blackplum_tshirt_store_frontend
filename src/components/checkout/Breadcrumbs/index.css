@@ -1,0 +1,116 @@
+.BreadcrumbContainer {
+  grid-area: breadcrumbs-section;
+  -ms-grid-area: breadcrumbs-section;
+  text-align: center;
+  margin-bottom: 0.8em;
+}
+
+.breadcrumb {
+  display: inline-block;
+  overflow: hidden;
+  counter-reset: flag;
+}
+
+.breadcrumb span {
+  text-decoration: none;
+  outline: none;
+  display: block;
+  float: left;
+  font-size: 0.55em;
+  line-height: 3em;
+  padding: 0em 0.625em 0em 3.75em;
+  position: relative;
+  border: 1px solid #b5b5b5;
+}
+.Enabled {
+  cursor: pointer;
+}
+
+.breadcrumb span:first-child {
+  padding-left: 2.875em;
+  border-radius: 0.3125em 0em 0em 0.3125em;
+}
+
+.breadcrumb span:first-child:before {
+  left: 1.14em;
+}
+
+.breadcrumb span:last-child {
+  border-radius: 0 0.3125em 0.3125em 0;
+  padding-right: 1.25em;
+}
+
+.breadcrumb span.active,
+.Enabled:hover  {
+  background: #333;
+}
+
+.breadcrumb span.active:after,
+.Enabled:hover:after {
+  background: #333;
+  background: linear-gradient(135deg, #333, #000);
+}
+
+.breadcrumb span:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: -1.5em;
+  width: 3em;
+  height: 3em;
+  transform: scale(0.707) rotate(45deg);
+  z-index: 1;
+  background: #666;
+  background: linear-gradient(135deg, #666, #333);
+  box-shadow: 2px -2px 0 2px rgba(0, 0, 0, 0.4), 3px -3px 0 2px rgba(255, 255, 255, 0.1);
+  border-radius: 0em 0.3125em 0em 3.125em;
+}
+
+.breadcrumb span:last-child:after {
+  content: none;
+}
+
+.breadcrumb span:before {
+  content: counter(flag);
+  counter-increment: flag;
+  border-radius: 100%;
+  width: 1.25em;
+  height: 1.25em;
+  line-height: 1.25em;
+  margin: 0.8em 0em;
+  position: absolute;
+  top: 0;
+  left: 1.875em;
+  background: #444;
+  background: linear-gradient(#444, #222);
+  font-weight: bold;
+}
+
+.flat span,
+.flat span:after {
+  background: white;
+  color: black;
+  transition: all 0.5s;
+}
+
+.flat span:before {
+  background: white;
+  box-shadow: 0 0 0 1px #ccc;
+}
+
+.Enabled:hover,
+.flat span.active,
+.Enabled:hover:after,
+.flat span.active:after {
+  background: #d7dce5;
+}
+
+/* 620px/16px = 38.75em */
+@media only screen and (min-width: 38.75em) {
+
+  .breadcrumb span {
+    font-size: 0.85em;
+  }
+}
+	
+	

@@ -1,0 +1,48 @@
+.TotalsContainer {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 0.8em 1em 1em 1em;
+  margin: 1em 0em 0.8em 0em;
+  height: auto;
+  min-height: 6em;
+  max-height: 17em;
+}
+.TotalsLabelValueContainer {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 0.3em 0em;
+}
+.TotalLabel {
+  display: inline-block;
+  width: 7em;
+}
+.TotalValue {
+  display: inline-block;
+  width: 7em;
+}
+
+.CheckoutButtonContainer {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  position: relative;
+  padding: 2em 0em 0em 0em;
+  text-align: left;
+}
+.SubmitOrderButtonFake {
+  opacity: 0.4;
+  cursor: initial;
+  display: inline-block;
+}
+
+
+/* 672px/16px = 42em */
+@media only screen and (min-width: 42em) {
+  .TotalsContainer {
+    margin: 1em 0em 0em 0em;
+  }
+}
+
+

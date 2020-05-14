@@ -1,0 +1,98 @@
+.ShippingAddressFormContainer {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  grid-area: content-section;
+  -ms-grid-area: content-section;
+  padding: 0em 1em 1em 1em;
+  margin: 1em 0em 0.8em 0em;
+}
+
+.ShippingAddressForm {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.ShippingAddressForm input[type=number]::-webkit-inner-spin-button, 
+.ShippingAddressForm input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none;
+  margin: 0; 
+}
+.ShippingAddressForm input[type=number] {
+  -moz-appearance: textfield;
+}
+.ShippingAddressForm input, .ShippingAddressForm select {
+  background-color: #ffffff;
+  height: 100%;
+  outline: none;
+}
+.ShippingAddressForm input:focus, .ShippingAddressForm select:focus { 
+  background-color: #d7dce5;
+}
+
+.InputSection {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  grid-area: content-section;
+  -ms-grid-area: content-section;
+  display: inline-block;
+  padding: 0em 0.7em 0.5em 0.7em;
+}
+
+.FormSelect {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: none;
+  width: 100%;
+  height: 3.1em;
+  background: #ffffff;
+  padding-left: 1em;
+  outline-style: none;
+  font-size: 1rem;
+}
+
+.FirstNameInput {
+  width: 18em;
+}
+.LastNameInput {
+  width: 18em;
+}
+.EmailInput {
+  width: 18em;
+}
+.StreetInput {
+  width: 18em;
+}
+.CityInput {
+  width: 18em;
+}
+.StateInput {
+  width: 18em;
+}
+.ZipInput {
+  width: 7em;
+}
+.CountryInput {
+  width: 16em;
+}
+
+.ValidationErroredField, .ValidationErroredField:hover {
+  border-color: #CA2A2A;
+}
+.ValidationErrorMessage {
+  color: #CA2A2A;
+  font-size: 0.85em;
+}
+.AddressNotValidMessage {
+  margin-top: 1em;
+  text-align: center;
+}
+.SubmitShippingAddressButton {
+  margin-top: 1.5em;
+}
+
+
+

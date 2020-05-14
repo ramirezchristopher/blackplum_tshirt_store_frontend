@@ -1,0 +1,473 @@
+
+.ProductDetails {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+
+  grid-column-start: navigation;
+  grid-column-end: content;
+  width: 100%;
+  display: inline-grid;
+  grid-template-columns: auto;
+  grid-template-rows: 2.5em auto auto auto auto auto auto 4em auto auto 9em;
+  grid-template-areas: 
+    "product-breadcrumbs"
+    "product-image-viewport"
+    "product-thumbs"
+    "product-info-section"
+    "product-description-section"
+    "materials-info-section"
+    "care-instructions-section"
+    "size-chart-section"
+    "size-options-section"
+    "color-options-section"
+    "add-to-cart-button-section";
+    
+    
+  -ms-grid-column: navigation;
+  -ms-grid-column-end: content;
+  -ms-grid-columns: auto;
+  -ms-grid-rows: 2.5em auto auto auto auto auto auto 4em auto auto 9em;
+  -ms-grid-template-areas: 
+    "product-breadcrumbs"
+    "product-image-viewport"
+    "product-thumbs"
+    "product-info-section"
+    "product-description-section"
+    "materials-info-section"
+    "care-instructions-section"
+    "size-chart-section"
+    "size-options-section"
+    "color-options-section"
+    "add-to-cart-button-section";
+}
+
+.ProductThumbsContainer {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  
+  grid-area: product-thumbs;
+  align-self: center;
+  
+  -ms-grid-area: product-thumbs;
+  -ms-grid-column-align: center;
+  
+  margin: 0.7rem auto 1rem auto;
+  white-space: nowrap;
+}
+.ProductImageViewport {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+
+  grid-area: product-image-viewport;
+  justify-self: center;
+  align-self: center;
+  
+  -ms-grid-area: product-image-viewport;
+  -ms-grid-row-align: center;
+  -ms-grid-column-align: center;
+  
+  margin: 0.7rem 0rem 0rem 0rem;
+  padding: 1rem;
+  width: 90%;
+  max-width: 30rem;
+  min-width: 21rem;
+  height: 21rem;
+  position: relative;
+}
+.ProductImageViewport img {
+  max-height: 100%;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto 0em;
+}
+.ProductInfoContainer {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+
+  grid-area: product-info-section;
+  -ms-grid-area: product-info-section;
+  
+  padding-top: 1em;
+  font-size: 1.3em;
+}
+.ProductInfoContainer > h1 {
+  font-size: 1.2em;
+  padding: 0em;
+  margin: 0em;
+}
+.ProductInfoContainer > h2 {
+  font-size: 0.7em;
+  padding: 0em;
+  margin: 0em;
+}
+.ProductDescriptionContainer {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  grid-area: product-description-section;
+  -ms-grid-area: product-description-section;
+  padding-right: 0.6em;
+}
+.MaterialsInfoContainer {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  grid-area: materials-info-section;
+  -ms-grid-area: materials-info-section;
+  padding-right: 0.6em;
+}
+.MaterialsInfoContainer ul {
+  margin: 0em 0em 1em 0em;
+  padding: 0em 1em;
+}
+.MaterialsInfoContainer li {
+  padding: 0em;
+  margin: 0em;
+}
+.CareInstructionsContainer {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  grid-area: care-instructions-section;
+  -ms-grid-area: care-instructions-section;
+  padding-right: 0.6em;
+}
+.SizeChartLink {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  grid-area: size-chart-section;
+  -ms-grid-area: size-chart-section;
+  margin: 0.5rem 1rem;
+}
+.SizeChartLink a, .SizeChartLink a:visited {
+  color: #000000;
+}
+.SizeSelectContainer {
+  grid-area: size-options-section;
+  -ms-grid-area: size-options-section;
+  max-width: 25em;
+}
+.ColorSelectContainer {
+  grid-area: color-options-section;
+  -ms-grid-area: color-options-section;
+  max-width: 25em;
+}
+.AddToCartButtonContainer {
+  grid-area: add-to-cart-button-section;
+  align-self: end;
+  
+  -ms-grid-area: add-to-cart-button-section;
+  -ms-grid-column-align: end;
+  
+  position: relative;
+}
+.ProductImageThumbContainer {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  
+  width: 6.5rem;
+  height: 7rem;
+  margin: 0rem 0.3rem 0.3rem 0.3rem;
+  cursor: pointer;
+  display: inline-block;
+  overflow: hidden;
+  vertical-align: middle;
+  position: relative;
+}
+.ProductImageThumb {
+  max-width: 6.5rem;
+  max-height: 100%;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto 0;
+}
+
+.ProductImageThumbContainer:hover, .ActiveThumbOption {
+  border-width: 2px;
+  border-style: solid;
+  border-color: #6793ea;
+  border-radius: 4px;
+}
+.ProductImage {
+  vertical-align: middle;
+}
+.FormSection {
+  margin: 0.5rem 1rem;
+}
+
+.ProductPrice {
+  color: #08aa1b;
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+.ProductCategory {
+  font-size: 0.9rem;
+  padding: 0.5em 0em;
+}
+.SizeOption {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+
+  display: inline-block;
+  padding: 0.9rem 0rem;
+  width: 3rem;
+  height: 3rem;
+  margin: 0.2rem 0.4rem 0.2rem 0rem;
+  text-align: center;
+  cursor: pointer;
+  outline: none;
+  font-size: 1rem;
+  background-color: #ffffff;
+}
+.SizeOption:hover, .ActiveSizeOption {
+  border-radius: 4px;
+  background-color: #555568;
+  color: #ffffff;
+  transition: all 0.5s;
+  border: none;
+}
+
+.ColorOption {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  display: inline-block;
+  width: 3rem;
+  height: 3rem;
+  cursor: pointer;
+  outline: none;
+  margin-right: 0.4rem;
+  margin-bottom: 0.4em;
+}
+.ColorOption:hover, .ColorOption.Active {
+  border-width: 2px;
+  border-style: solid;
+  border-color: #6793ea;
+  border-radius: 4px;
+}
+
+.ColorOptionsArmy {
+  background-color: #5b5249;
+}
+.ColorOptionsAqua {
+  background-color: #1f8cab;
+}
+.ColorOptionsAsh {
+  background-color: #d6d7d2;
+}
+.ColorOptionsAsphalt {
+  background-color: #5f5e5d;
+}
+.ColorOptionsAthleticHeather {
+  background-color: #bfbfbd;
+}
+.ColorOptionsBabyBlue {
+  background-color: #7dceed;
+}
+.ColorOptionsBlackHeather {
+  background-color: #2a2a2a;
+}
+.ColorOptionsBerry {
+  background-color: #b73274;
+}
+.ColorOptionsBlack {
+  background-color: #2b2b2b;
+}
+.ColorOptionsBrown {
+  background-color: #483f3c;
+}
+.ColorOptionsCranberry {
+  background-color: #8c2117;
+}
+.ColorOptionsDarkGreyHeather {
+  background-color: #3d3d3d;
+}
+.ColorOptionsForest {
+  background-color: #3b503d;
+}
+.ColorOptionsDeepHeather {
+  background-color: #787777;
+}
+.ColorOptionsLeaf {
+  background-color: #679056;
+}
+.ColorOptionsHeatherBlue {
+  background-color: #b1bdd8;
+}
+.ColorOptionsHeatherDeepTeal {
+  background-color: #4d6f84;
+}
+.ColorOptionsHeatherForest {
+  background-color: #495753;
+}
+.ColorOptionsHeatherGrey {
+  background-color: #e1e4ea;
+}
+.ColorOptionsHeatherMidnightNavy {
+  background-color: #4b495e;
+}
+.ColorOptionsHeatherMint {
+  background-color: #a6d7c9;
+}
+.ColorOptionsHeatherOrange {
+  background-color: #e48a6c;
+}
+.ColorOptionsHeatherPrismDustyBlue {
+  background-color: #a0bab1;
+}
+.ColorOptionsHeatherPrismLilac {
+  background-color: #c6a6bb;
+}
+.ColorOptionsHeatherPrismIceBlue {
+  background-color: #b3cece;
+}
+.ColorOptionsHeatherPrismMint {
+  background-color: #a6c6af;
+}
+.ColorOptionsHeatherPrismPeach {
+  background-color: #d7b3a8;
+}
+.ColorOptionsHeatherRaspberry {
+  background-color: #c65a77;
+}
+.ColorOptionsHeatherTrueRoyal {
+  background-color: #3b5798;
+}
+.ColorOptionsKellyGreen {
+  background-color: #2c8c2c;
+}
+.ColorOptionsKelly {
+  background-color: #2c8c2c;
+}
+.ColorOptionsMauve {
+  background-color: #b37474;
+}
+.ColorOptionsNavy {
+  background-color: #302e3b;
+}
+.ColorOptionsNewSilver {
+  background-color: #eaeaea;
+}
+.ColorOptionsOceanBlue {
+  background-color: #4293ba;
+}
+.ColorOptionsOlive {
+  background-color: #4b5235;
+}
+.ColorOptionsPink {
+  background-color: #edbac3;
+}
+.ColorOptionsRed {
+  background-color: #af2131;
+}
+.ColorOptionsSilver {
+  background-color: #adadb0;
+}
+.ColorOptionsSlate {
+  background-color: #979ca3;
+}
+.ColorOptionsSoftCream {
+  background-color: #dcd0c5;
+}
+.ColorOptionsSteelBlue {
+  background-color: #3c607e;
+}
+.ColorOptionsWhite {
+  background-color: #ffffff;
+}
+
+.ProductDetails .FormLabel {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  margin-bottom: 0.4rem;
+  display: block;
+  font-size: 1rem;
+}
+
+/* 620px/16px = 38.75em */
+@media only screen and (min-width: 38.75em) {
+  .ProductImageViewport {
+    height: 30rem;
+  }
+}
+
+/* 800px/16px = 50em */
+@media only screen and (min-width: 50em) {
+  .ProductDetails {
+    grid-template-columns: 10em 1fr 1fr;
+    grid-template-rows: 2.5em 8em auto auto 7em 5em auto auto;
+    grid-template-areas: 
+      "product-breadcrumbs    product-breadcrumbs     product-breadcrumbs"
+      "product-thumbs         product-image-viewport  product-info-section"
+      "product-thumbs         product-image-viewport  product-description-section"
+      "product-thumbs         product-image-viewport  materials-info-section"
+      "product-thumbs         product-image-viewport  care-instructions-section"
+      "product-thumbs         product-image-viewport  size-chart-section"
+      "size-options-section   size-options-section    add-to-cart-button-section"
+      "color-options-section  color-options-section   add-to-cart-button-section";
+      
+    -ms-grid-columns: 10em 1fr 1fr;
+    -ms-grid-rows: 2.5em 8em auto auto 7em 5em auto auto;
+    -ms-grid-template-areas: 
+      "product-breadcrumbs    product-breadcrumbs     product-breadcrumbs"
+      "product-thumbs         product-image-viewport  product-info-section"
+      "product-thumbs         product-image-viewport  product-description-section"
+      "product-thumbs         product-image-viewport  materials-info-section"
+      "product-thumbs         product-image-viewport  care-instructions-section"
+      "product-thumbs         product-image-viewport  size-chart-section"
+      "size-options-section   size-options-section    add-to-cart-button-section"
+      "color-options-section  color-options-section   add-to-cart-button-section";
+   }
+   .ProductThumbsContainer {
+     white-space: normal;
+     justify-self: start;
+     -ms-grid-row-align: start;
+     padding-left: 1rem;
+   }
+   .ProductImageViewport {
+     margin: 0.7rem 0rem 1rem 0rem;
+   }
+    
+  /* IMAGE ZOOM */
+  #img-zoomer-box:hover, #img-zoomer-box:active {
+    cursor: zoom-in;
+  }
+  #img-zoomer-box:hover #ZoomedImage, #img-zoomer-box:active #ZoomedImage {
+    opacity: 1;
+  }
+  #ZoomedImage {
+    width: 21.25em;
+    height: 21.25em;
+    box-shadow: 0 5px 10px -2px rgba(0,0,0,0.3);
+    pointer-events: none;
+    position: absolute;
+    opacity: 0;
+    border-width: 4px;
+    border-style: solid;
+    border-color: whitesmoke;
+    z-index: 99;
+    border-radius: 100%;
+    display: block;
+    transition: opacity .2s;
+  }	
+}
+
+/* 1300px/16px = 81.25em */
+@media only screen and (min-width: 81.25em) {
+  .ProductDetails {
+    border-left: 1px solid #d1d3d6;
+    border-right: 1px solid #d1d3d6;
+  }
+}
+

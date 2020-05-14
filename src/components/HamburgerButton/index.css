@@ -1,0 +1,55 @@
+
+
+.HamburgerMenuButton {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  
+  grid-area: hamburger;
+  justify-self: center;
+  align-self: center;
+  
+  -ms-grid-area: hamburger;
+  -ms-grid-row-align: center;
+  -ms-grid-column-align: center;
+  
+  cursor: pointer;
+  padding: 0.7em;
+  border: none;
+  background: none;
+  outline: none;
+}
+
+/* 672px/16px = 42em */
+@media only screen and (min-width: 42em) {
+  .HamburgerMenuButton {
+    display: none;
+  }
+}
+
+.bar1, .bar2, .bar3 {
+  width: 35px;
+  height: 5px;
+  background-color: #333;
+  margin: 6px 0;
+  transition: 0.4s;
+}
+
+/* Rotate first bar */
+.change .bar1 {
+  -webkit-transform: rotate(-45deg) translate(-9px, 6px);
+  transform: rotate(-45deg) translate(-9px, 6px);
+}
+
+/* Fade out the second bar */
+.change .bar2 {
+  opacity: 0;
+}
+
+/* Rotate last bar */
+.change .bar3 {
+  -webkit-transform: rotate(45deg) translate(-8px, -8px);
+  transform: rotate(45deg) translate(-8px, -8px);
+}
+
+

@@ -1,0 +1,56 @@
+
+.NavContainer {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+
+  grid-area: navigation;
+  -ms-grid-area: navigation;
+  width: 100%;
+  border-right-width: 1px;
+  border-right-style: solid;
+  border-right-color: #d1d3d6;
+  position: absolute;
+  top: 6em;
+  z-index: 100;
+}
+.NavItem { 
+  display: block;
+  margin: 0px;
+  padding: 0.6em 1em;
+  cursor: pointer;
+  background-color: #ffffff;
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  border-bottom-color: #d1d3d6;
+  text-decoration: none;
+  color: #000000;
+}
+.NavItem:visited {
+  color: #000000;
+}
+.NavItem.Selected, .NavItem:hover {
+  background-color: #d7dce5;
+}
+
+/* 672px/16px = 42em */
+@media only screen and (min-width: 42em) {
+  .NavContainer {
+    position: relative;
+    top: 0em;
+    z-index: 0;
+  }
+  .NavItem { 
+    border-bottom: none;
+  }
+}
+
+/* 1300px/16px = 81.25em */
+@media only screen and (min-width: 81.25em) {
+  .NavContainer {
+    border-left-width: 1px;
+    border-left-style: solid;
+    border-left-color: #d1d3d6;
+  }
+}
+

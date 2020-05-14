@@ -1,0 +1,132 @@
+.GridContainer {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: auto auto auto auto 1fr auto;
+  grid-template-areas: 
+    "header"
+    "navigation"
+    "banner"
+    "search-result-title"
+    "content"
+    "footer";
+    
+  -ms-grid-columns: auto;
+  -ms-grid-rows: auto auto auto auto 1fr auto;
+  -ms-grid-template-areas: 
+    "header"
+    "navigation"
+    "banner"
+    "search-result-title"
+    "content"
+    "footer";
+
+  align-content: start;
+  background-color: #ffffff;
+}
+
+.ContentContainer {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  
+  grid-area: content;
+  -ms-grid-area: content;
+  padding: 0.5em 0em;
+  
+  display: inline-grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto;
+  grid-template-areas: 
+    "merchandise-card-section  merchandise-card-section";
+    
+  -ms-grid-columns: 1fr 1fr;
+  -ms-grid-rows: auto;
+  -ms-grid-template-areas: 
+    "merchandise-card-section  merchandise-card-section";
+}
+
+.PageNameContainer {
+  grid-area: banner;
+  -ms-grid-area: banner;
+  align-self: center;
+  -ms-grid-column-align: center;
+}
+.PageName {
+  font-family: 'Exo 2', sans-serif;
+  display: inline-block;
+  font-size: 1.3em;
+  padding: 1em 1em 0.6em 1em;
+  vertical-align: middle;
+  font-weight: bold;
+}
+.SearchResultsTitle {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  grid-area: search-result-title;
+  padding: 1em;
+}
+
+/* 672px/16px = 42em */
+@media only screen and (min-width: 42em) {
+  .GridContainer {
+    grid-template-columns: 12em 1fr;
+    grid-template-rows: auto auto auto auto auto;
+    grid-template-areas: 
+      "header      header"
+      "navigation  banner"
+      "navigation  search-result-title"
+      "navigation  content"
+      "footer      footer";
+    
+    -ms-grid-columns: 12em 1fr;
+    -ms-grid-rows: auto auto auto auto auto;
+    -ms-grid-template-areas: 
+      "header      header"
+      "navigation  banner"
+      "navigation  search-result-title"
+      "navigation  content"
+      "footer      footer";
+  }
+  .ContentContainer {
+    grid-template-columns: repeat(auto-fill, minmax(15em, 1fr));
+    grid-template-rows: auto;
+    grid-template-areas: 
+      "merchandise-card-section";
+      
+    -ms-grid-columns: repeat(auto-fill, minmax(15em, 1fr));
+    -ms-grid-rows: auto;
+    -ms-grid-template-areas: 
+      "merchandise-card-section";
+  }
+}
+
+/* 1300px/16px = 81.25em */
+@media only screen and (min-width: 81.25em) {
+  .GridContainer {
+    grid-template-columns: 1fr 12em 69.25em 1fr;
+    grid-template-rows: auto auto auto auto 10em;
+    grid-template-areas: 
+      ".  header      header               ."
+      ".  navigation  banner               ."
+      ".  navigation  search-result-title  ."
+      ".  navigation  content              ."
+      ".  footer      footer               .";
+      
+    -ms-grid-columns: 1fr 12em 69.25em 1fr;
+    -ms-grid-rows: auto auto auto auto 10em;
+    -ms-grid-template-areas: 
+      ".  header      header               ."
+      ".  navigation  banner               ."
+      ".  navigation  search-result-title  ."
+      ".  navigation  content              ."
+      ".  footer      footer               .";
+  }
+  .ContentContainer, .PageNameContainer, .SearchResultsTitle {
+    border-right: 1px solid #d1d3d6;
+  }
+}

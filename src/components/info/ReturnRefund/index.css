@@ -1,0 +1,20 @@
+.ReturnRefundContainer {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  grid-area: content;
+}
+.ReturnRefundContainer #question1 { 
+  margin-top: 0;
+  padding-top: 0;
+}
+.ReturnRefundContainer h2 {
+  font-size: 1em;
+  margin: 1.8em 0.3em 0.8em 0em;
+  padding: 0;
+}
+.ReturnRefundContainer p {
+  margin: 0;
+  padding: 0;
+}
+

@@ -1,0 +1,53 @@
+.InvoiceItemCard {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0em 0em 0.7em 0em;
+  padding: 0.5em;
+  position: relative;
+}
+.InvoiceItemThumb {
+  width: 7rem;
+}
+.InvoiceItemThumbSection {
+  display: inline-block;
+  margin-right: 0.6em;
+}
+.InvoiceItemDetailsSection {
+  display: inline-block;
+  vertical-align: top;
+  width: 62%;
+}
+.InvoiceItemDetailsSection a {
+  color: #000000;
+}
+.InvoiceItemTitle {
+  font-size: 1.3em;
+  margin-bottom: 0.6em;
+}
+.InvoiceItemStyle, .InvoiceItemQuantity {
+  font-size: 0.9rem;
+}
+.InvoiceItemPrice {
+  margin-top: 1.1em;
+}
+.DeleteInvoiceItem {
+  cursor: pointer;
+  text-decoration: underline;
+  color: #676d75;
+  font-size: 0.8em;
+  position: absolute;
+  right: 0em;
+  bottom: 0em;
+  padding: 1em;
+}
+.DeleteInvoiceItem a:visited {
+  color: #676d75;
+}
+
+/* 620px/16px = 38.75em */
+@media only screen and (min-width: 38.75em) {
+  .DeleteInvoiceItem {
+  	top: 0em;
+  }
+}

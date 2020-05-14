@@ -1,0 +1,79 @@
+.BannerContainer {
+  grid-area: banner;
+  align-self: center;
+  
+  -ms-grid-area: banner;
+  -ms-grid-column-align: center;
+}
+.WelcomeBanner {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  position: relative;
+  padding: 1em 0em;
+  margin: 0.7rem 0.5em;
+  min-height: 15rem;
+  color: #ffffff;
+  text-align: center;
+  overflow: hidden;
+  z-index: 1;
+  border-color: #70747a;
+  
+  background: rgba(255,255,255,1);
+  background: -moz-linear-gradient(left, rgba(255,255,255,1) 0%, rgba(234,200,119,1) 0%, rgba(217,226,158,1) 100%);
+  background: -webkit-gradient(left top, right top, color-stop(0%, rgba(255,255,255,1)), color-stop(0%, rgba(234,200,119,1)), color-stop(100%, rgba(217,226,158,1)));
+  background: -webkit-linear-gradient(left, rgba(255,255,255,1) 0%, rgba(234,200,119,1) 0%, rgba(217,226,158,1) 100%);
+  background: -o-linear-gradient(left, rgba(255,255,255,1) 0%, rgba(234,200,119,1) 0%, rgba(217,226,158,1) 100%);
+  background: -ms-linear-gradient(left, rgba(255,255,255,1) 0%, rgba(234,200,119,1) 0%, rgba(217,226,158,1) 100%);
+  background: linear-gradient(to right, rgba(255,255,255,1) 0%, rgba(234,200,119,1) 0%, rgba(217,226,158,1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#d9e29e', GradientType=1 );
+
+}
+.WelcomeBanner:before {
+  content: "";
+  position: absolute;
+  width: 300%;
+  height: 300%;
+  top: -120%;
+  left: -110%;
+  z-index: -1;
+  background: url("https://storage.googleapis.com/us.artifacts.glass-icon-219701.appspot.com/icons/shirt_icon.png") 0 0 repeat;
+  background-size: 16em;
+  -webkit-transform: rotate(30deg);
+  -moz-transform: rotate(30deg);
+  -ms-transform: rotate(30deg);
+  -o-transform: rotate(30deg);
+  transform: rotate(30deg);
+  opacity: 0.35;
+}
+.WelcomeBannerGreetingContainer {
+  padding: 2.3em 1em;
+  margin: 0;
+  font-size: 1rem;
+}
+.WelcomeBannerGreeting {
+  margin: 0;
+  font-family: 'Righteous', cursive;
+  font-size: 345%;
+  text-shadow: 0 0 0.9rem #70747a;
+}
+.WelcomeBannerGreetingCompanyName {
+  white-space: nowrap;
+}
+.WelcomeBannerTagline {
+  font-family: 'Exo 2', sans-serif;
+  font-style: italic;
+  color: #ffffff;
+  font-size: 2.6rem;
+  text-shadow: 0 0 0.5rem #000000;
+  padding-bottom: 1rem;
+  margin: 0;
+}
+
+/* 1300px/16px = 81.25em */
+@media only screen and (min-width: 81.25em) {
+  .BannerContainer {
+    border-right: 1px solid #d1d3d6;
+  }
+}
+

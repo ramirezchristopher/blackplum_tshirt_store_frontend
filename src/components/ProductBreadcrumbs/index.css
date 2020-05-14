@@ -1,0 +1,24 @@
+.ProductBreadcrumbsContainer {
+  grid-area: product-breadcrumbs;
+  align-self: center;
+  
+  -ms-grid-area: product-breadcrumbs;
+  -ms-grid-column-align: center;
+  
+  padding: 0em 1em;
+  font-size: 0.9em;
+  color: #676d75;
+}
+.ProductBreadcrumbsContainer a {
+  cursor: pointer;
+  color: #676d75;
+}
+.ProductBreadcrumbCurent::before {
+  content: ">";
+  text-decoration: none;
+  font-weight: normal;
+  padding: 0em 0.5rem;
+}
+.ProductBreadcrumbCurent {
+  font-weight: bold;
+}

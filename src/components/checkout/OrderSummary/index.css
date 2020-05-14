@@ -1,0 +1,54 @@
+.OrderSummaryContainer {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 0em 1em 1em 1em;
+  margin: 1em 0em 0.8em 0em;
+}
+.OrderSummaryItemsSection {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  margin-bottom: 1.3em;
+}
+.OrderSummaryItem {
+  padding-bottom: 0.5em;	
+}
+.OrderSummaryItemThumb {
+  width: 4rem;
+}
+.OrderSummaryItemDetailsContainer {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  display: inline-block;
+  vertical-align: top;
+  width: 75%;
+}
+.OrderSummaryItemDetails {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;	
+  padding: 0.3em 0em 0.3em 0.8em;
+}
+.OrderSummaryShipToDetails {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  padding-bottom: 0.3em;
+}
+.OrderSummaryShippingMethodSection {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 1.4em 0em;
+}
+
+/* 800px/16px = 50em */
+@media only screen and (min-width: 50em) {
+  .OrderSummaryContainer {
+    margin: 1em 0em;
+  }
+}
+ 
+  
