@@ -2,11 +2,14 @@ import React, { Component } from 'react';
 
 import './index.css';
 
+/* Utility */
+import storeUserInteraction from '../../../utility/UserInteractionTracker/';
+
 class ContactUs extends Component {
 
   componentDidMount() {
     
-    let { setClickedTabName, tab, storeUserInteraction } = this.props;
+    let { setClickedTabName, tab } = this.props;
     
     window.scrollTo(0, 0);
     setClickedTabName(tab);

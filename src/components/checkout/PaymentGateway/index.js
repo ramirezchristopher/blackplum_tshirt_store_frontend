@@ -9,6 +9,7 @@ import BillingAddressForm from '../BillingAddressForm/';
 
 /* Utility */
 import RESTHelper from '../../../utility/RESTHelper/';
+import storeUserInteraction from '../../../utility/UserInteractionTracker/';
 
 var dropin = require('braintree-web-drop-in');
 
@@ -33,7 +34,7 @@ class PaymentGateway extends Component {
 
   componentDidMount() {
     
-    let { setIsLoading, storeUserInteraction } = this.props;
+    let { setIsLoading } = this.props;
 
     window.scrollTo(0, 0);
     

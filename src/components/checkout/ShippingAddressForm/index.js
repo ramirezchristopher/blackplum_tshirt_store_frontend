@@ -9,6 +9,7 @@ import './index.css';
 
 /* Utility */
 import RESTHelper from '../../../utility/RESTHelper/';
+import storeUserInteraction from '../../../utility/UserInteractionTracker/';
 
 const AddressFields = {
   CITY: "city",
@@ -63,7 +64,7 @@ class ShippingAddressForm extends Component {
   componentDidMount() {
 
     let { address } = this.state;
-    let { order, storeUserInteraction } = this.props;
+    let { order } = this.props;
     
     window.scrollTo(0, 0);
     

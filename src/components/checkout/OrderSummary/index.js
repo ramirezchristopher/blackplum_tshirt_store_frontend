@@ -3,6 +3,9 @@ import React, { Component } from 'react';
 /* Styles */
 import './index.css';
 
+/* Utility */
+import storeUserInteraction from '../../../utility/UserInteractionTracker/';
+
 class OrderSummary extends Component {
   
   constructor(props) {
@@ -11,8 +14,6 @@ class OrderSummary extends Component {
   }
   
   componentDidMount() {
-    
-    let { storeUserInteraction } = this.props;
     
     storeUserInteraction("CHECKOUT_SUMMARY", {});
   }

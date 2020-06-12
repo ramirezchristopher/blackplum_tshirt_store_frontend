@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, Suspense } from 'react';
 import { Route } from 'react-router-dom';
 import { withRouter, Switch, Redirect } from 'react-router'
 
@@ -6,13 +6,14 @@ import './index.css';
 
 /* Components */
 import TabMenu from '../../TabMenu/';
-import AboutUs from '../AboutUs/';
-import ReturnRefund from '../ReturnRefund/';
-import ShippingInfo from '../ShippingInfo/';
-import OrderStatus from '../OrderStatus/';
-import ContactUs from '../ContactUs/';
-import PrivacyPolicy from '../PrivacyPolicy/';
-import TermsConditions from '../TermsConditions/';
+
+const AboutUs = React.lazy(() => import('../AboutUs/'));
+const ReturnRefund = React.lazy(() => import('../ReturnRefund/'));
+const ShippingInfo = React.lazy(() => import('../ShippingInfo/'));
+const OrderStatus = React.lazy(() => import('../OrderStatus/'));
+const ContactUs = React.lazy(() => import('../ContactUs/'));
+const PrivacyPolicy = React.lazy(() => import('../PrivacyPolicy/'));
+const TermsConditions = React.lazy(() => import('../TermsConditions/'));
 
 const CompanyInfoTabs = [
   {
@@ -72,7 +73,7 @@ class CompanyInfo extends Component {
 
   render() {
     
-    let {setClickedTabName, clickedTabName, getTabDisplayName, menu, storeUserInteraction} = this.props;
+    let {setClickedTabName, clickedTabName, getTabDisplayName, menu } = this.props;
 
     return (
         
@@ -86,31 +87,45 @@ class CompanyInfo extends Component {
        
           <Switch>
             <Route path={CompanyInfoTabs[0].url} render={(props) => (
-              <AboutUs {...props} setClickedTabName={setClickedTabName} tab={CompanyInfoTabs[0]} storeUserInteraction={storeUserInteraction} exact />
+	          <Suspense fallback={<div>Loading...</div>}>
+                  <AboutUs {...props} setClickedTabName={setClickedTabName} tab={CompanyInfoTabs[0]} exact />
+              </Suspense>
             )} exact />
            
             <Route path={CompanyInfoTabs[1].url} render={(props) => (
-                <ContactUs {...props} setClickedTabName={setClickedTabName} tab={CompanyInfoTabs[1]} storeUserInteraction={storeUserInteraction}exact />
+	            <Suspense fallback={<div>Loading...</div>}>
+                    <ContactUs {...props} setClickedTabName={setClickedTabName} tab={CompanyInfoTabs[1]} exact />
+                </Suspense>
               )} exact />
             
             <Route path={CompanyInfoTabs[2].url} render={(props) => (
-              <ReturnRefund {...props} setClickedTabName={setClickedTabName} tab={CompanyInfoTabs[2]} storeUserInteraction={storeUserInteraction} exact />
+	          <Suspense fallback={<div>Loading...</div>}>
+                  <ReturnRefund {...props} setClickedTabName={setClickedTabName} tab={CompanyInfoTabs[2]} exact />
+              </Suspense>
             )} exact />
             
             <Route path={CompanyInfoTabs[3].url} render={(props) => (
-                <ShippingInfo {...props} setClickedTabName={setClickedTabName} tab={CompanyInfoTabs[3]} storeUserInteraction={storeUserInteraction} exact />
+	            <Suspense fallback={<div>Loading...</div>}>
+                    <ShippingInfo {...props} setClickedTabName={setClickedTabName} tab={CompanyInfoTabs[3]} exact /> 
+                </Suspense>
               )} exact />
            
             <Route path={CompanyInfoTabs[4].url} render={(props) => (
-              <OrderStatus {...props} setClickedTabName={setClickedTabName} tab={CompanyInfoTabs[4]} storeUserInteraction={storeUserInteraction} exact />
+	          <Suspense fallback={<div>Loading...</div>}>
+                  <OrderStatus {...props} setClickedTabName={setClickedTabName} tab={CompanyInfoTabs[4]} exact />
+              </Suspense>
             )} exact />
            
             <Route path={CompanyInfoTabs[5].url} render={(props) => (
-                <PrivacyPolicy {...props} setClickedTabName={setClickedTabName} tab={CompanyInfoTabs[5]} storeUserInteraction={storeUserInteraction} exact />
+	            <Suspense fallback={<div>Loading...</div>}>
+                    <PrivacyPolicy {...props} setClickedTabName={setClickedTabName} tab={CompanyInfoTabs[5]} exact />
+                </Suspense>
               )} exact />
             
             <Route path={CompanyInfoTabs[6].url} render={(props) => (
-                <TermsConditions {...props} setClickedTabName={setClickedTabName} tab={CompanyInfoTabs[6]} storeUserInteraction={storeUserInteraction} exact />
+	            <Suspense fallback={<div>Loading...</div>}>
+                   <TermsConditions {...props} setClickedTabName={setClickedTabName} tab={CompanyInfoTabs[6]} exact />
+                </Suspense>
               )} exact />
            
             {/* fallback path */}

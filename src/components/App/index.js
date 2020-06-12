@@ -14,6 +14,9 @@ import WelcomeBanner from '../WelcomeBanner/';
 import { CompanyInfoComponent } from '../info/CompanyInfo/';
 import OrderStatus from '../OrderStatus/';
 
+/* Utility */
+import storeUserInteraction, { UserInfo } from '../../utility/UserInteractionTracker/';
+
 /* Database */
 import CatalogStore from '../../storage/CatalogStore/';
 import ShoppingCartStore from '../../storage/ShoppingCartStore/';
@@ -59,281 +62,7 @@ const flowers = [
   "Achillea",
   "Adamsneedle",
   "AfricanBoxwood",
-  "AfricanLily",
-  "Agapanthus",
-  "Ageratum",
-  "AgeratumhoustonimNordmeer",
-  "Alliumdrumstick",
-  "Alpina",
-  "Alstroemeria",
-  "Amaranthushypochondriacus",
-  "Amaryllis",
-  "Ammimajus",
-  "Anconitum",
-  "Anemone",
-  "Anigozanthus",
-  "AnnualDelphinium",
-  "Anthurium",
-  "Antirrhinummajus",
-  "Artichokethistle",
-  "Asparagus",
-  "Aster",
-  "Asterspp",
-  "Astilbe",
-  "BabysBreath",
-  "BachelorsButton",
-  "Banksia",
-  "Bellflower",
-  "BellsofIreland",
-  "BigFlax",
-  "BigheadKnapweed",
-  "BillyButtons",
-  "BirdofParadise",
-  "BlazingStar",
-  "BlueLaceFlower",
-  "Boronia",
-  "Bouvardia",
-  "BoxwoodAfrican",
-  "BreathofHeavenDiosma",
-  "Broom",
-  "BuckthornVariegated",
-  "Buddleia",
-  "Bupleurum",
-  "ButterflyBush",
-  "ButterflyOrchid",
-  "ButtonFunray",
-  "CaliforniaPepperberry",
-  "CallaLily",
-  "Campanula",
-  "Candytuft",
-  "CanterburyBells",
-  "Carnation",
-  "Carthamus",
-  "CasaBlanca",
-  "Caspia",
-  "Cattleya",
-  "Celosia",
-  "Celosiaargenta",
-  "Centaureacyanus",
-  "Chamelaucium",
-  "ChimneyBells",
-  "Chrysanthemum",
-  "Chrysanthemumxmorifolium",
-  "Clarkia",
-  "CockscombCrested",
-  "CoffeeBeanBerry",
-  "CommonMyrtle",
-  "CommonYarrow",
-  "ConeFlower",
-  "Consolidaambigua",
-  "Convallaria",
-  "Cordyline",
-  "Cosmos",
-  "Cornflower",
-  "Craspedia",
-  "CurlyWillow",
-  "Cymbidium",
-  "CymbidiumOrchid",
-  "Daffodil",
-  "Dahlia",
-  "DaisyMums",
-  "DelphiniumBelladonna",
-  "DelphiniumPacificGiant",
-  "Dendrobium",
-  "DendrobiumOrchid",
-  "Dianthusbarbatus",
-  "Dianthuscaryophyllus",
-  "Dianthuscaryophyllusnana",
-  "DragonsTongue",
-  "Drumstick",
-  "Enthusiasm",
-  "Ericaspp",
-  "Eucalyptusseeded",
-  "Eucalyptussilverdollar",
-  "Eustomagrandiflorum",
-  "FalseBirdofParadise",
-  "FalseSpirea",
-  "FarewellToSpring",
-  "FernleafYarrow",
-  "Feverfew",
-  "FlamingoFlower",
-  "FlaxNewZealand",
-  "FlossFlower",
-  "FoxtailFern",
-  "Freesia",
-  "Freesiaxhybrida",
-  "FujiMums",
-  "Gardenia",
-  "GayFeather",
-  "Genistaspp",
-  "Gerbera",
-  "GerberaRubyRed",
-  "Ginger",
-  "Gladiolus",
-  "Gladiolushybridnanus",
-  "GoatsBeard",
-  "Godetia",
-  "GoldenRod",
-  "GuersneyLily",
-  "Gyp",
-  "Gypsophilapaniculata",
-  "HangingHelicona",
-  "Heath",
-  "Heather",
-  "Helianthusannuus",
-  "Heliconiaspp",
-  "Hippeastrum",
-  "Hydrangea",
-  "Iberisamara",
-  "IncaLily",
-  "Iris",
-  "Irisspp",
-  "JaphetteOrchid",
-  "Jonquil",
-  "KangarooPaw",
-  "Knapweed",
-  "Lacefern",
-  "Larkspur",
-  "Lathyrusodoratus",
-  "Lavandula",
-  "Lavender",
-  "Liatris",
-  "Lilac",
-  "Lily",
-  "LillyoftheValley",
-  "LilyCasaBlanca",
-  "LilyoftheField",
-  "LilyoftheNile",
-  "LilyStargazer",
-  "Limonium",
-  "Limoniumspp",
-  "Lisianthus",
-  "LobsterClaw",
-  "Loveinmist",
-  "Loveliesbleeding",
-  "Margueritedaisy",
-  "Mattholiaincana",
-  "Melaleuca",
-  "Memosa",
-  "Mimosa",
-  "MinatureCarnation",
-  "Mingfern",
-  "MiniCarnation",
-  "MiniatureGladiolus",
-  "MistyBlueLimonium",
-  "Moluccellalaevis",
-  "Monkshood",
-  "Montbretia",
-  "MonteCassino",
-  "Moonorchid",
-  "Motherinlawtongue",
-  "Musa",
-  "Myrsine",
-  "Myrtle",
-  "Myrtus",
-  "Narcissus",
-  "Nephrolepis",
-  "Nerine",
-  "NerineLily",
-  "Nigella",
-  "OrnamentalOnion",
-  "Ornithogalum",
-  "Paeonia",
-  "PaintedTongue",
-  "PaperReed",
-  "Papyruslionshead",
-  "Peony",
-  "PeruvianLily",
-  "Phalaenopsis",
-  "Philodendron",
-  "Phlox",
-  "PincushionFlower",
-  "PinkMink",
-  "Pitt",
-  "Pittosporum",
-  "PixieCarnation",
-  "Polianthestuberosa",
-  "PomponChrysanthemum",
-  "PoppyAnemone",
-  "Porium",
-  "Proteaspp",
-  "PussyWillow",
-  "QueenAnnesLace",
-  "Ranunculus",
-  "Rattlesnake",
-  "RedRibbons",
-  "RedRover",
-  "Riceflower",
-  "Rose",
-  "RoseBridalPink",
-  "RoseBridalWhite",
-  "RoseChampagne",
-  "RoseDiadem",
-  "RoseEmblem",
-  "RoseFantasy",
-  "RoseFire&Ice",
-  "RoseKardinal",
-  "RoseLadyLiberty",
-  "RoseLavanda",
-  "RoseOsiana",
-  "RoseRoyalty",
-  "SafariSunset",
-  "Safflower",
-  "SagePerennial",
-  "Salix",
-  "SalmonReagan",
-  "Sansevieria",
-  "Saponaria",
-  "SatinFlowers",
-  "Saxicola",
-  "Scabiosa",
-  "Schinus",
-  "Sealavender",
-  "ShellFlowers",
-  "SnakePlant",
-  "Snapdragon",
-  "Solidago",
-  "Solidasterspp",
-  "Speedwell",
-  "SpiderLily",
-  "SpiderMums",
-  "SprayCarnation",
-  "SprengeriFern",
-  "StarofBethlehem",
-  "Statice",
-  "Stenamezon",
-  "Stephanotis",
-  "Stock",
-  "Strawberrybanksia",
-  "Strawflower",
-  "Summerpoinsettia",
-  "SummersDarling",
-  "Sunflower",
-  "SweetPea",
-  "SweetWilliam",
-  "SwordFern",
-  "Syringavulgaris",
-  "Tailflowers",
-  "Tasselflower",
-  "Thouroughwax",
-  "Throatwort",
-  "Tracelium",
-  "TreeFern",
-  "TrumpetLily",
-  "Tuberose",
-  "Tulip",
-  "Tulipa",
-  "Veronica",
-  "Wattle",
-  "Waxflower",
-  "WildPlantain",
-  "Willowcurly",
-  "Windflower",
-  "Wolfsbane",
-  "YouthandOldAge",
-  "Zantedeschia",
-  "Zinna",
-  "Zinniaelegans"
+  "AfricanLily"
 ]
 
 class App extends Component {
@@ -343,8 +72,6 @@ class App extends Component {
     super(props);
     
     this.state = {
-        
-      user: null, 
       menu: {
         isVisible: false
       },
@@ -365,7 +92,6 @@ class App extends Component {
     this.toggleHamburgerMenu = this.toggleHamburgerMenu.bind(this);
     this.refreshShoppingCartItemCount = this.refreshShoppingCartItemCount.bind(this);
     this.storeCatalog = this.storeCatalog.bind(this);
-    this.storeUserInteraction = this.storeUserInteraction.bind(this);
     this.getAllCatalogItems = this.getAllCatalogItems.bind(this);
     this.getCatalogItemsByCategory = this.getCatalogItemsByCategory.bind(this);
     this.getCatalogItemsBySearchTerm = this.getCatalogItemsBySearchTerm.bind(this);
@@ -391,7 +117,7 @@ class App extends Component {
       });
     
     this.refreshShoppingCartItemCount();
-    this.setState({user: this.generateRandomId()});
+    UserInfo.id = this.generateRandomId();
   }
   
   generateRandomId() {
@@ -544,7 +270,7 @@ class App extends Component {
       })
       .then(searchMatches => {
 
-        this.storeUserInteraction("SEARCH", {terms: searchTerms.join(","), matches: searchMatches.length});
+        storeUserInteraction("SEARCH", {terms: searchTerms.join(","), matches: searchMatches.length});
       });
     }
   }
@@ -596,18 +322,6 @@ class App extends Component {
       this.setState({shoppingCartItemCount: count});
     });
   }
-
-  storeUserInteraction(type, data) {
-
-    let url = `${this.RESTHelper.getBaseUrl()}/v1/observe/interaction`;
-
-    axios.post(url, {type: type, user: this.state.user, data: data})
-      .then(result => {
-
-        return result;
-      })
-      .catch(error => console.log(error));
-  }
   
   render() {
     
@@ -620,7 +334,6 @@ class App extends Component {
             clearClickedTabName={this.clearClickedTabName} 
             toggleHamburgerMenu={this.toggleHamburgerMenu} 
             shoppingCartItemCount={shoppingCartItemCount} 
-            storeUserInteraction={this.storeUserInteraction} 
             getCatalogItemsBySearchTerm={this.getCatalogItemsBySearchTerm} />
 
           <Switch>
@@ -651,7 +364,7 @@ class App extends Component {
                       
                     items.map(item => {
                       
-                      return <MerchandiseCard key={item.id} item={item} storeUserInteraction={this.storeUserInteraction} />
+                      return <MerchandiseCard key={item.id} item={item} />
                     })
                     
                     : 
@@ -660,7 +373,7 @@ class App extends Component {
                       { /* List all items */
                         items.map(item => {
                       
-                          return <MerchandiseCard key={item.id} item={item} storeUserInteraction={this.storeUserInteraction} />
+                          return <MerchandiseCard key={item.id} item={item} />
                         })
                       }
                     </React.Fragment>
@@ -673,17 +386,17 @@ class App extends Component {
 
             <Route path="/details/:productId" render={(props) => (
 
-              <ProductDetails {...props} refreshShoppingCartItemCount={this.refreshShoppingCartItemCount} storeUserInteraction={this.storeUserInteraction} />
+              <ProductDetails {...props} refreshShoppingCartItemCount={this.refreshShoppingCartItemCount} />
             )} exact />
 
                 
             <Route path="/info" render={(props) => (
-              <CompanyInfoComponent {...props} setClickedTabName={this.setClickedTabName} clickedTabName={navigation.clickedTabName} getTabDisplayName={this.getTabDisplayName} menu={menu} storeUserInteraction={this.storeUserInteraction} />
+              <CompanyInfoComponent {...props} setClickedTabName={this.setClickedTabName} clickedTabName={navigation.clickedTabName} getTabDisplayName={this.getTabDisplayName} menu={menu} />
             )} />
             
             <Route path="/cart" render={(props) => (
                 
-              <ShoppingCart {...props} refreshShoppingCartItemCount={this.refreshShoppingCartItemCount} storeUserInteraction={this.storeUserInteraction} />
+              <ShoppingCart {...props} refreshShoppingCartItemCount={this.refreshShoppingCartItemCount} />
             )} exact />
             
             <Route path="/order/:transactionId" render={(props) => (

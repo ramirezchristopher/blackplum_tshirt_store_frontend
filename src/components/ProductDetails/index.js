@@ -1,8 +1,7 @@
-import React, { Component } from 'react';
+import React, { Component, Suspense } from 'react';
 
 /* Components */
-import ProductBreadcrumbs from '../ProductBreadcrumbs/';
-import SizeChart from '../SizeChart/';
+
 import Loading from '../Loading/';
 
 import './index.css';
@@ -10,6 +9,12 @@ import './index.css';
 /* Database */
 import CatalogStore from '../../storage/CatalogStore/';
 import ShoppingCartStore from '../../storage/ShoppingCartStore/';
+
+/* Utility */
+import storeUserInteraction from '../../utility/UserInteractionTracker/';
+
+const ProductBreadcrumbs = React.lazy(() => import('../ProductBreadcrumbs/'));
+const SizeChart = React.lazy(() => import('../SizeChart/'));
 
 const PRODUCT_ATTRIBUTE = {
 
@@ -142,8 +147,6 @@ class ProductDetails extends Component {
         .then(catalogItem => {
         
           if(catalogItem) {
-            
-            let { storeUserInteraction } = this.props;
           
             storeUserInteraction("VIEW_ITEM", {name: catalogItem.name, id: catalogItem.id});
           }
@@ -155,7 +158,7 @@ class ProductDetails extends Component {
 
     let buttonElem = event.target;
     let { catalogItem, userSelections } = this.state;
-    let { refreshShoppingCartItemCount, storeUserInteraction } = this.props;
+    let { refreshShoppingCartItemCount } = this.props;
     let uid = `CART-ITEM:${catalogItem.id}-${userSelections.size}-${userSelections.color}`;
 
     this.showSuccessOverlay(buttonElem);
@@ -371,8 +374,10 @@ class ProductDetails extends Component {
         }
         
         <main className="ProductDetails">     
-  
-          <ProductBreadcrumbs itemName={ catalogItem.name } />
+
+          <Suspense fallback={<div>Loading...</div>}>
+              <ProductBreadcrumbs itemName={ catalogItem.name } />
+          </Suspense>
         
           <div className="ProductThumbsContainer">
           <div className={this.isActiveThumbnail(1) ? "ActiveThumbOption ProductImageThumbContainer" : "ProductImageThumbContainer Bordered"}  onClick={() => this.selectThumbnail(1, preview1Src)}>
@@ -428,7 +433,9 @@ class ProductDetails extends Component {
             <div className="CareInstructions">{catalogItem.careInstructions}</div>
           </div>
           
-          <SizeChart categoryType={catalogItem.categoryType} />
+          <Suspense fallback={<div>Loading...</div>}>
+              <SizeChart categoryType={catalogItem.categoryType} />
+          </Suspense>
   
           <div className="SizeSelectContainer FormSection">
             <label id="SizeOptionsLabel" className="FormLabel">Size:&nbsp;&nbsp;{userSelections.size}</label>

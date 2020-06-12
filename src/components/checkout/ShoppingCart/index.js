@@ -182,7 +182,7 @@ class ShoppingCart extends Component {
   render() {
 
     let { currentBreadcrumb, title, order, orderCompletion, isLoading } = this.state;
-    let { refreshShoppingCartItemCount, storeUserInteraction } = this.props;
+    let { refreshShoppingCartItemCount } = this.props;
 
     return (
         
@@ -238,8 +238,7 @@ class ShoppingCart extends Component {
                   setCurrentBreadcrumb={ this.setCurrentBreadcrumb } 
                   getTaxRateForAddress={ this.getTaxRateForAddress } 
                   resetOrderShippingSelection={ this.resetOrderShippingSelection } 
-                  setIsLoading={ this.setIsLoading } 
-                  storeUserInteraction={ storeUserInteraction } />
+                  setIsLoading={ this.setIsLoading } />
                :  null }
               
               { currentBreadcrumb === "PAYMENT" ? 
@@ -251,14 +250,13 @@ class ShoppingCart extends Component {
                   updateOrderCompletion={ this.updateOrderCompletion } 
                   setCurrentBreadcrumb={ this.setCurrentBreadcrumb } 
                   getTaxRateForAddress={ this.getTaxRateForAddress } 
-                  setIsLoading={ this.setIsLoading }
-                  storeUserInteraction={ storeUserInteraction } />
+                  setIsLoading={ this.setIsLoading } />
               :  null }
               
               
               { currentBreadcrumb === "SUMMARY" ? 
                   
-                  <OrderSummary order={ order } storeUserInteraction={ storeUserInteraction } />
+                  <OrderSummary order={ order } />
                   
               : null }
   

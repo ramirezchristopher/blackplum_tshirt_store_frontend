@@ -8,7 +8,7 @@ class MerchandiseCard extends Component {
   
   render() {
     
-    const { item, storeUserInteraction } = this.props;
+    const { item } = this.props;
     let path = `/details/${item.id}`;
     
     return (

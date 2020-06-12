@@ -3,11 +3,14 @@ import { Link } from 'react-router-dom';
 
 import './index.css';
 
+/* Utility */
+import storeUserInteraction from '../../../utility/UserInteractionTracker/';
+
 class TermsConditions extends Component {
 
   componentDidMount() {
     
-    let { setClickedTabName, tab, storeUserInteraction } = this.props;
+    let { setClickedTabName, tab } = this.props;
     
     window.scrollTo(0, 0);
     setClickedTabName(tab);

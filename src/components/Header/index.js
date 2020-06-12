@@ -9,11 +9,14 @@ import './index.css';
 import HamburgerButton from '../HamburgerButton/';
 import { SearchBarSection } from '../SearchBar/';
 
+/* Utility */
+import storeUserInteraction from '../../utility/UserInteractionTracker/';
+
 class Header extends Component {
 
   render() {
     
-    const { clearClickedTabName, toggleHamburgerMenu, shoppingCartItemCount, storeUserInteraction, getCatalogItemsBySearchTerm, location } = this.props;
+    const { clearClickedTabName, toggleHamburgerMenu, shoppingCartItemCount, getCatalogItemsBySearchTerm, location } = this.props;
     let shoppingCartLabel = `View your shopping cart. Current number of items in cart is ${shoppingCartItemCount}.`;
     
     return (
