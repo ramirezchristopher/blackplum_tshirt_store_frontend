@@ -1,9 +1,30 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './App';
+import { BrowserRouter } from 'react-router-dom';
+import AboutUs from './index.js';
 
-it('renders without crashing', () => {
-  const div = document.createElement('div');
-  ReactDOM.render(<App />, div);
-  ReactDOM.unmountComponentAtNode(div);
+describe('AboutUs', () => {
+	
+  let propsMock = {
+	setClickedTabName: (tab) => null, 
+	tab: {
+      name: "ABOUTUS",
+      displayName: "About Us", 
+      url: "/info/about"
+    }
+  };
+
+  let componentWithRouter = 
+    (<BrowserRouter>
+	  <AboutUs { ...propsMock } />
+	</BrowserRouter>);
+
+  it('renders without crashing', () => {
+	
+	window.scrollTo = jest.fn();
+    
+    const div = document.createElement('div');
+    ReactDOM.render(componentWithRouter, div);
+    ReactDOM.unmountComponentAtNode(div);
+  });
 });

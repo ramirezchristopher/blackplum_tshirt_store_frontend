@@ -1,9 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './App';
+import Loading from './index.js';
 
-it('renders without crashing', () => {
-  const div = document.createElement('div');
-  ReactDOM.render(<App />, div);
-  ReactDOM.unmountComponentAtNode(div);
+describe('Loading', () => {
+	
+  it('renders without crashing', () => {
+    const div = document.createElement('div');
+    ReactDOM.render(<Loading />, div);
+    ReactDOM.unmountComponentAtNode(div);
+  });
 });

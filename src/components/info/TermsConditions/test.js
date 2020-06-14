@@ -1,9 +1,28 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './App';
+import { BrowserRouter } from 'react-router-dom';
+import TermsConditions from './index.js';
 
-it('renders without crashing', () => {
-  const div = document.createElement('div');
-  ReactDOM.render(<App />, div);
-  ReactDOM.unmountComponentAtNode(div);
+describe('TermsConditions', () => {
+	
+  let propsMock = {
+	setClickedTabName: (tab) => null, 
+	tab: {
+      name: "TERMSCONDITIONS",
+      displayName: "Terms & Conditions",
+      url: "/info/terms-conditions"
+    }
+  };
+  
+  let componentWithRouter = 
+    (<BrowserRouter>
+	  <TermsConditions { ...propsMock } />
+	</BrowserRouter>);
+	
+  it('renders without crashing', () => {
+	window.scrollTo = jest.fn();
+    const div = document.createElement('div');
+    ReactDOM.render(componentWithRouter, div);
+    ReactDOM.unmountComponentAtNode(div);
+  });
 });

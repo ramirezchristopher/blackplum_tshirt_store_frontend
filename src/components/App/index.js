@@ -14,15 +14,13 @@ import WelcomeBanner from '../WelcomeBanner/';
 import { CompanyInfoComponent } from '../info/CompanyInfo/';
 import OrderStatus from '../OrderStatus/';
 
-/* Utility */
-import storeUserInteraction, { UserInfo } from '../../utility/UserInteractionTracker/';
-
 /* Database */
 import CatalogStore from '../../storage/CatalogStore/';
 import ShoppingCartStore from '../../storage/ShoppingCartStore/';
 
 /* Utility */
 import RESTHelper from '../../utility/RESTHelper/';
+import storeUserInteraction, { UserInfo } from '../../utility/UserInteractionTracker/';
 
 /* Style */
 import './index.css';

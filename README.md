@@ -20,7 +20,7 @@ This project requires node and the npm package manager to be installed on the co
 
 **Install package dependencies**
   1. cd <PATH_TO_PROJECT>/blackplum_tshirt_store_frontend/
-  2. npm init -y && npm install
+  2. npm install
 
 
 ### METHOD 1: Running with npm

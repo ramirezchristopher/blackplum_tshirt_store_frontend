@@ -1,9 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './App';
+import renderer from 'react-test-renderer';
+import WelcomeBanner from './index.js';
 
-it('renders without crashing', () => {
-  const div = document.createElement('div');
-  ReactDOM.render(<App />, div);
-  ReactDOM.unmountComponentAtNode(div);
+describe('WelcomeBanner', () => {
+	
+  it('renders without crashing', () => {
+    const div = document.createElement('div');
+    ReactDOM.render(<WelcomeBanner />, div);
+    ReactDOM.unmountComponentAtNode(div);
+  });
 });

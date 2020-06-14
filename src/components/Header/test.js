@@ -1,9 +1,29 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './App';
+import { BrowserRouter } from 'react-router-dom';
+import { HeaderSection } from './index.js';
 
-it('renders without crashing', () => {
-  const div = document.createElement('div');
-  ReactDOM.render(<App />, div);
-  ReactDOM.unmountComponentAtNode(div);
+describe('Header', () => {
+	
+  let propsMock = { 
+	clearClickedTabName: () => null, 
+	toggleHamburgerMenu: () => null,
+	shoppingCartItemCount: 0,
+	getCatalogItemsBySearchTerm: () => null
+  };
+
+  let componentWithRouter = 
+    <BrowserRouter>
+	  <HeaderSection { ...propsMock } />
+	</BrowserRouter>
+	
+  it('renders without crashing', () => {
+	
+	const elementMock = { addEventListener: jest.fn() };
+    jest.spyOn(document, 'querySelector').mockImplementation(() => elementMock);
+	
+    const div = document.createElement('div');
+    ReactDOM.render(componentWithRouter, div);
+    ReactDOM.unmountComponentAtNode(div);
+  });
 });

@@ -1,9 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './App';
+import renderer from 'react-test-renderer';
+import { BrowserRouter } from 'react-router-dom';
+import ProductBreadcrumbs from './index.js';
 
-it('renders without crashing', () => {
-  const div = document.createElement('div');
-  ReactDOM.render(<App />, div);
-  ReactDOM.unmountComponentAtNode(div);
+let componentWithRouter = (<BrowserRouter><ProductBreadcrumbs itemName={'Test Product'} /></BrowserRouter>);
+
+describe('ProductBreadcrumbs', () => {
+	
+  it('renders without crashing', () => {
+    const div = document.createElement('div');
+    ReactDOM.render(componentWithRouter, div);
+    ReactDOM.unmountComponentAtNode(div);
+  });
 });

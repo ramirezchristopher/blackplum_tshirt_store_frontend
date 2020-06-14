@@ -279,7 +279,7 @@ class BillingAddressForm extends Component {
               <label htmlFor="firstname">First Name</label>
             </div>
             <div className={ addressValidation.isFirstNameValid ? "InputField" : "InputField ValidationErroredField" }>
-              <input type="text" name="firstname" id="firstname" maxLength="100" value={ address.firstName } onChange={(event) => this.updateAddressField(AddressFields.FIRST_NAME, event.target.value)} tabindex="1" />
+              <input type="text" name="firstname" id="firstname" maxLength="100" value={ address.firstName } onChange={(event) => this.updateAddressField(AddressFields.FIRST_NAME, event.target.value)} tabIndex="1" />
             </div>
               
             { !addressValidation.isFirstNameValid ? 
@@ -295,7 +295,7 @@ class BillingAddressForm extends Component {
               <label htmlFor="lastname">Last Name</label>
             </div>
             <div className={ addressValidation.isLastNameValid ? "InputField" : "InputField ValidationErroredField" }>
-              <input type="text" name="lastname" id="lastname" maxLength="100" value={ address.lastName } onChange={(event) => this.updateAddressField(AddressFields.LAST_NAME, event.target.value)} tabindex="2" />
+              <input type="text" name="lastname" id="lastname" maxLength="100" value={ address.lastName } onChange={(event) => this.updateAddressField(AddressFields.LAST_NAME, event.target.value)} tabIndex="2" />
             </div>
               
             { !addressValidation.isLastNameValid ? 
@@ -311,7 +311,7 @@ class BillingAddressForm extends Component {
               <label htmlFor="street">Street</label>
             </div>
             <div className={ addressValidation.isStreetValid ? "InputField" : "InputField ValidationErroredField" }>
-              <input type="text" name="street" id="street" maxLength="100" value={ address.street } onChange={(event) => this.updateAddressField(AddressFields.STREET, event.target.value)} tabindex="4" />
+              <input type="text" name="street" id="street" maxLength="100" value={ address.street } onChange={(event) => this.updateAddressField(AddressFields.STREET, event.target.value)} tabIndex="4" />
             </div>
               
             { !addressValidation.isStreetValid ? 
@@ -327,7 +327,7 @@ class BillingAddressForm extends Component {
               <label htmlFor="city">City</label>
             </div>
             <div className={ addressValidation.isCityValid ? "InputField" : "InputField ValidationErroredField" }>
-              <input type="text" name="city" id="city" maxLength="100" value={ address.city } onChange={(event) => this.updateAddressField(AddressFields.CITY, event.target.value)} tabindex="5" />
+              <input type="text" name="city" id="city" maxLength="100" value={ address.city } onChange={(event) => this.updateAddressField(AddressFields.CITY, event.target.value)} tabIndex="5" />
             </div>
               { !addressValidation.isCityValid ? 
                 
@@ -343,7 +343,7 @@ class BillingAddressForm extends Component {
             </div>
 
             <div className="InputField">
-              <select className="FormSelect" name="state" id="state" value={ address.state } onChange={(event) => this.updateAddressField(AddressFields.STATE, event.target.value)} tabindex="6">
+              <select className="FormSelect" name="state" id="state" value={ address.state } onChange={(event) => this.updateAddressField(AddressFields.STATE, event.target.value)} tabIndex="6">
 
               { 
                 stateOptions.map(stateOption => {
@@ -366,7 +366,7 @@ class BillingAddressForm extends Component {
                 id="zip" 
                 value={ address.zip } 
                 onChange={(event) => this.updateAddressField(AddressFields.ZIP, event.target.value)} 
-                tabindex="7" />
+                tabIndex="7" />
             </div>
               
             { !addressValidation.isZipValid ? 
@@ -382,7 +382,7 @@ class BillingAddressForm extends Component {
               <label htmlFor="country">Country</label>
             </div>
             <div className="InputField">
-              <select className="FormSelect" name="country" id="country" onChange={(event) => this.updateAddressField(AddressFields.COUNTRY, event.target.value)} tabindex="8">
+              <select className="FormSelect" name="country" id="country" onChange={(event) => this.updateAddressField(AddressFields.COUNTRY, event.target.value)} tabIndex="8">
 
               { 
                 countryOptions.map(countryOption => {
